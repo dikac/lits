@@ -19,9 +19,7 @@
     ]
   },
   "include":  [
-    "src",
-    "spec"
-
+    "src"
   ],
   "exclude":   [
   ]

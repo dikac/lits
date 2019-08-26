@@ -5,11 +5,12 @@
     "module": "umd",
     "declaration": true,
     "target": "es2016",
-    "outDir": ".",
+    "outDir": "dist-spec",
     "sourceMap": true,
     "downlevelIteration" : true,
     "strictNullChecks": true,
     "incremental": true,
+    "tsBuildInfoFile": "./dist-spec/compiler-cache",
     "strictPropertyInitialization": true,
     "lib": [
       "es2016",
@@ -18,7 +19,7 @@
     ]
   },
   "include":  [
-    "src"
+    "spec"
   ],
   "exclude":   [
   ]

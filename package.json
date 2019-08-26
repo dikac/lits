@@ -19,7 +19,8 @@
     "compile-distribution": "tsc -p tsconfig-distribution.json",
     "clean-src": "rimraf src",
     "compile-watch": "tsc -w",
-    "install": "npm-run-all compile-distribution clean-src"
+    "install": "tsc -p tsconfig-distribution.json",
+    "poatinstall": "rimraf src"
   },
   "files": [
     ".gitignore",

@@ -10,7 +10,6 @@
     "downlevelIteration" : true,
     "strictNullChecks": true,
     "incremental": true,
-    "tsBuildInfoFile": "./dist/compiler-cache",
     "strictPropertyInitialization": true,
     "lib": [
       "es2016",

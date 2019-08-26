@@ -1,0 +1,19 @@
+{
+  "name": "lits",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist",
+  "dependencies": {
+    "@types/jasmine": "^3.4.0",
+    "jasmine": "^3.4.0",
+    "typescript": "^3.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test-library": "jasmine --config=./jasmine-library.json",
+    "compile": "tsc",
+    "compile-watch": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC"
+}

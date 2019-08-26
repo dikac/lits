@@ -12,7 +12,8 @@
   "scripts": {
     "test-library": "jasmine --config=./jasmine-library.json",
     "compile": "tsc",
-    "compile-watch": "tsc -w"
+    "compile-watch": "tsc -w",
+    "install": "tsc"
   },
   "author": "",
   "license": "ISC"

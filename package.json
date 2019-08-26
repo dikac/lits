@@ -16,7 +16,7 @@
     "test-library": "jasmine --config=./jasmine-library.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "install": "tsc -p tsconfig-distribution.json && rimraf src"
+    "install": "\"tsc -p tsconfig-distribution.json\" \"rimraf src/\""
   },
   "files": [
     ".gitignore",

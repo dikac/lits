@@ -19,10 +19,8 @@
   "files": [
     ".gitignore",
     "LICENSE",
-    "History.md",
     "Readme.md",
     "tsconfig.json",
-    "tsconfig-distribution.json",
     "src/"
   ],
   "author": "",

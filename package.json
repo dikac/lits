@@ -4,16 +4,18 @@
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
-    "@types/jasmine": "^3.4.0",
-    "jasmine": "^3.4.0",
+    "cpx": "^1.5.0",
     "typescript": "^3.5.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/jasmine": "^3.4.0",
+    "jasmine": "^3.4.0"
+  },
   "scripts": {
     "test-library": "jasmine --config=./jasmine-library.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "install": "tsc"
+    "install": "tsc -p tsconfig-distribution.json"
   },
   "files": [
     ".gitignore",

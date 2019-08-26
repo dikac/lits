@@ -2,7 +2,7 @@
   "name": "lits",
   "version": "0.0.1",
   "description": "",
-  "main": "dist",
+  "main": "dist/index.js",
   "dependencies": {
     "@types/jasmine": "^3.4.0",
     "jasmine": "^3.4.0",

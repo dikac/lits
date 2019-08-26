@@ -15,6 +15,14 @@
     "compile-watch": "tsc -w",
     "install": "tsc"
   },
+  "files": [
+    ".gitignore",
+    "LICENSE",
+    "History.md",
+    "Readme.md",
+    "tsconfig.json",
+    "src/"
+  ],
   "author": "",
   "license": "ISC"
 }

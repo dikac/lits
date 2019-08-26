@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "dependencies": {
     "cpx": "^1.5.0",
+    "rimraf": "^3.0.0",
     "typescript": "^3.5.3"
   },
   "devDependencies": {
@@ -15,7 +16,7 @@
     "test-library": "jasmine --config=./jasmine-library.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "install": "tsc -p tsconfig-distribution.json"
+    "install": "tsc -p tsconfig-distribution.json && rimraf src"
   },
   "files": [
     ".gitignore",

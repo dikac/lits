@@ -1,5 +1,5 @@
-export default interface Send<Message, Response>  {
+export default interface Send<Response>  {
 
-    send(data : Message) : Response;
+    send() : Response;
     sendable() : boolean;
 }

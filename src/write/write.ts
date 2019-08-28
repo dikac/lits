@@ -1,5 +1,5 @@
-export default interface Write<Data, Return = void>  {
+export default interface Write<Data, Information = void>  {
 
-    write(data : Data) : Return;
+    write(data : Data) : Information;
     writable() : boolean;
 }

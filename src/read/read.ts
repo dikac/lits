@@ -1,5 +1,5 @@
-export default interface Read<Data>  {
+export default interface Read<Data, Argument = void>  {
 
-    read(data : Data);
+    read(data : Argument) : Data;
     readable() : boolean;
 }

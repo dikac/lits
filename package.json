@@ -15,10 +15,9 @@
   "scripts": {
     "test-library": "jasmine --config=./jasmine-library.json",
     "compile": "tsc",
-    "compile-distribution": "tsc -p tsconfig-distribution.json",
-    "clean-src": "rimraf src",
+    "clean-src": "node install.js",
     "compile-watch": "tsc -w",
-    "install": "tsc",
+    "install": "npm-run-all compile clean-src",
     "postinstall": "node install.js"
   },
   "files": [

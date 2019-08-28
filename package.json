@@ -18,7 +18,8 @@
     "compile-distribution": "tsc -p tsconfig-distribution.json",
     "clean-src": "rimraf src",
     "compile-watch": "tsc -w",
-    "install": "node install.js"
+    "install": "tsc",
+    "postinstall": "node install.js"
   },
   "files": [
     ".gitignore",

@@ -27,6 +27,7 @@
     "History.md",
     "Readme.md",
     "tsconfig.json",
+    "install.js",
     "tsconfig-distribution.json",
     "src/"
   ],

@@ -1,7 +1,7 @@
 import Validatable from '../validatable/validatable';
 
-export default interface Validator<Arguments extends any[]>  {
+export default interface Validator<Value, Result extends Validatable = Validatable>  {
 
-    validate(...args : Arguments) : Validatable;
+    validate(value : Value) : Result;
 
 }

@@ -3,7 +3,7 @@ import Validator  from '../../validator/validator';
 import Validatable  from '../../validatable/validatable';
 import Primitive  from '../../validatable/primitive';
 
-export default class implements Range, Validator<[number]> {
+export default class implements Range, Validator<number> {
 
     constructor(
         public minimum : number = 0,

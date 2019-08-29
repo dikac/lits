@@ -1,4 +1,4 @@
-export default interface ToString {
+export default interface ToString<Option = void> {
 
-    toString() : string;
+    toString(option : Option) : string;
 }

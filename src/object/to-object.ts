@@ -1,4 +1,4 @@
-export default interface ToObject {
+export default interface ToObject<Option = void> {
 
-    toObject() : object;
+    toObject(argument : Option) : object;
 }

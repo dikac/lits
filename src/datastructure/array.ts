@@ -10,6 +10,7 @@ import Shift from "./shift";
 import Extract from "./extract";
 import Get from "./get";
 import ExtractArray from "../array/any/extract";
+import Delete from "./delete";
 
 
 export default class
@@ -18,6 +19,7 @@ export default class
         Set<number, Data>,
         Get<number, Data>,
         Append<Data>,
+        Delete<number>,
         Last<Data>,
         First<Data>,
         Pop<Data>,
@@ -39,6 +41,11 @@ export default class
 
             yield value;
         }
+    }
+
+    delete(identifier: number) {
+
+        this.extract(identifier);
     }
 
     get lastIndex () : number {

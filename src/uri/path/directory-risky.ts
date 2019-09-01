@@ -19,7 +19,7 @@ export default class
         return this.segments.join(this.delimiter);
     }
 
-    get delimiter() : string{
+    get delimiter() : string {
 
         return this._delimiter;
     }

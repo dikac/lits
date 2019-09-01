@@ -1,6 +1,8 @@
-export default function DotExtension (extension : string|null) : string {
+import SafeCast from "../../../string/safe-cast";
 
-    if(extension === null) {
+export default function DotExtension (extension : string|null|undefined) : string {
+
+    if(extension === null || extension === undefined) {
 
         return '';
 

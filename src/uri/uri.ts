@@ -7,9 +7,9 @@ import Fragment from "./fragment/fragment";
 
 export default interface Uri extends ToString
 {
-    scheme() : Scheme;
-    query() : Query;
-    fragment() : Fragment;
-    authority() : Authority;
-    path() : Path;
+    readonly scheme : Scheme;
+    readonly query : Query;
+    readonly fragment : Fragment;
+    readonly authority : Authority;
+    readonly path : Path;
 }

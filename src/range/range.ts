@@ -1,6 +1,6 @@
 export default interface Range {
 
-    minimum : number;
-    maximum : number;
+   readonly minimum : number;
+   readonly maximum : number;
 
 }

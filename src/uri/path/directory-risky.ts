@@ -8,15 +8,15 @@ export default class
 {
 
     constructor(
-        private segments : string[] = [],
+        private segments : Iterable<string> = [],
         private _delimiter : string = '/'
     ) {
-        super(segments);
+        super([...segments]);
     }
 
     toString(): string {
 
-        return this.segments.join(this.delimiter);
+        return [...this].join(this.delimiter);
     }
 
     get delimiter() : string {

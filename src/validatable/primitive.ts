@@ -8,7 +8,7 @@ export default class implements  Validatable  {
 
     }
 
-    valid() : boolean {
+    get valid() : boolean {
 
         return this.boolean;
     }

@@ -16,7 +16,7 @@ export default class Standard implements  Validatable  {
         this._boolean = boolean;
     }
 
-    valid() : boolean {
+    get valid() : boolean {
 
         return this._boolean;
     }

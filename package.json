@@ -2,7 +2,7 @@
   "name": "lits",
   "version": "0.0.1",
   "description": "",
-  "main": "",
+  "main": "dist",
   "dependencies": {
     "typescript": "^3.5.3"
   },

@@ -1,6 +1,6 @@
 import  Validatable from './validatable';
 
-export default class implements  Validatable  {
+export default class Primitive implements  Validatable  {
 
     constructor(
         public boolean : boolean

@@ -1,6 +1,6 @@
 import  Validatable from './validatable';
 
-export default class implements  Validatable  {
+export default class Invalid implements  Validatable  {
 
     get valid() : boolean {
 

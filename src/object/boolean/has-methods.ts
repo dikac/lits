@@ -1,4 +1,4 @@
-export default function HasMethod (object : object, properties : string[]) : boolean {
+export default function HasMethods (object : object, properties : string[]) : boolean {
 
     for (let property of properties) {
 

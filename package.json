@@ -9,6 +9,8 @@
   "devDependencies": {
     "@types/jasmine": "^3.4.0",
     "jasmine": "^3.4.0"
+  }, "exports" : {
+    "./" : "./dist"
   },
   "scripts": {
     "start-spec": "jasmine --config=./jasmine.json",

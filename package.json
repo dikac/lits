@@ -1,7 +1,7 @@
 {
   "name": "lits",
   "version": "0.0.1",
-  "description": "",
+  "description": "typescript generic library",
   "main": "dist",
   "dependencies": {
     "typescript": "^3.5.3"

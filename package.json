@@ -1,10 +1,10 @@
 {
   "name": "lits",
   "version": "0.0.1",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "typescript generic library",
+  "main": "dist",
   "dependencies": {
-    "typescript": "^3.5.3"
+    "typescript": "=3.5.3"
   },
   "devDependencies": {
     "@types/jasmine": "^3.4.0",

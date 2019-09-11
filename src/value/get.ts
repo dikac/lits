@@ -1,4 +1,4 @@
 export default interface Get<Data> {
 
-    get() : Data
+    get : Data
 }

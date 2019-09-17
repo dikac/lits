@@ -1,6 +1,6 @@
 import UpperFirst from './upper-first';
 
-export default function (
+export default function UpperWords (
     string : string,
     splitters : Iterable<string>
 ) : string {

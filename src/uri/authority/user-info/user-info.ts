@@ -4,6 +4,6 @@ import Passowrd from "./password/password";
 
 export default interface UserInfo extends ToString
 {
-    readonly user : User;
-    readonly password : Passowrd;
+    user() : User;
+    password() : Passowrd;
 }

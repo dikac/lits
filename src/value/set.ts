@@ -1,4 +1,4 @@
 export default interface Set<Data> {
 
-    set : Data
+    set(data : Data);
 }

@@ -8,7 +8,7 @@ export default class Primitive implements  Validatable  {
 
     }
 
-    get valid() : boolean {
+    valid() : boolean {
 
         return this.boolean;
     }

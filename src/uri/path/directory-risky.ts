@@ -6,25 +6,27 @@ export default class
     implements
         Path
 {
+    private _delimiter !: string;
 
     constructor(
         private segments : Iterable<string> = [],
-        private _delimiter : string = '/'
+        delimiter : string = '/'
     ) {
         super([...segments]);
+        this.setDelimiter(delimiter);
     }
 
     toString(): string {
 
-        return [...this].join(this.delimiter);
+        return [...this].join(this.delimiter());
     }
 
-    get delimiter() : string {
+    delimiter() : string {
 
         return this._delimiter;
     }
 
-    set delimiter(delimiter : string){
+    setDelimiter(delimiter : string){
 
         this._delimiter = delimiter;
     }

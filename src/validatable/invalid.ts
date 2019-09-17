@@ -2,7 +2,7 @@ import  Validatable from './validatable';
 
 export default class Invalid implements  Validatable  {
 
-    get valid() : boolean {
+    valid() : boolean {
 
         return false;
     }

@@ -1,6 +1,4 @@
-
 export default interface Validatable  {
 
-    readonly valid : boolean;
-
+    valid() : boolean;
 }

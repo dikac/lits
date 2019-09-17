@@ -10,11 +10,11 @@ export default class implements Range {
         maximum : number = Infinity
     ) {
 
-        this.minimum = minimum ;
-        this.maximum = maximum ;
+        this.setMinimum(minimum);
+        this.setMaximum(maximum);
     }
 
-    set minimum(number : number) {
+    setMinimum(number : number) {
 
         if(number === Infinity) {
 
@@ -24,7 +24,7 @@ export default class implements Range {
         this._minimum = number;
     }
 
-    set maximum(number : number) {
+    setMaximum(number : number) {
 
         if(number === 0) {
 
@@ -34,21 +34,21 @@ export default class implements Range {
         this._maximum = number;
     }
 
-    get minimum () : number {
+    minimum () : number {
 
         return this._minimum;
     }
 
-    get maximum () : number {
+    maximum () : number {
 
         return this._maximum;
     }
 
     toString() {
 
-        let minimum = this.minimum === 0 ? '' : this.minimum;
+        let minimum = this.minimum() === 0 ? '' : this.minimum();
 
-        let maximum = this.maximum === Infinity ? '' : this.maximum;
+        let maximum = this.maximum() === Infinity ? '' : this.maximum();
 
         let range = `{${minimum},${maximum}}`;
 

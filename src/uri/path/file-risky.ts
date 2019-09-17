@@ -6,8 +6,7 @@ import SafeCast from "../../string/safe-cast";
 
 export default class FileRisky extends DirectoryRisky implements File {
 
-
-    get name () : undefined|string {
+    name () : undefined|string {
 
         if(this.length === 0) {
 
@@ -38,12 +37,12 @@ export default class FileRisky extends DirectoryRisky implements File {
         return name;
     }
 
-    set name (name : string|undefined) {
+    setName (name : string|undefined) {
 
-        this.file = SafeCast(name) + DotExtension(this.extension);
+        this.setFile(SafeCast(name) + DotExtension(this.extension()));
     }
 
-    set extension(extension : undefined|string) {
+    setExtension(extension : undefined|string) {
 
         let file : string;
 
@@ -57,16 +56,16 @@ export default class FileRisky extends DirectoryRisky implements File {
 
         }
 
-        this.file = file;
+        this.setFile(file);
     }
 
 
-    get file() : string|undefined {
+    file() : string|undefined {
 
         return this.last();
     }
 
-    set file(file : undefined|string) {
+    setFile(file : undefined|string) {
 
         if(file === undefined || file === '') {
 
@@ -78,7 +77,7 @@ export default class FileRisky extends DirectoryRisky implements File {
         }
     }
 
-    get extension() : string|undefined {
+    extension() : string|undefined {
 
         if(this.length === 0) {
 

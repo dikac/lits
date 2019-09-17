@@ -1,4 +1,7 @@
 export default interface Toggleable {
 
-    enable : boolean;
+    enable() : void;
+    enabled() : boolean;
+    disable() : void;
+    disabled() : boolean;
 }

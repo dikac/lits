@@ -7,7 +7,7 @@ export default function IsValidatable (value : any) : value is Validatable  {
         return false;
     }
 
-    if('valid' in value) {
+    if(typeof value.valid === 'function') {
 
         return true;
     }

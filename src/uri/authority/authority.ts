@@ -4,7 +4,7 @@ import Host from "./host/host";
 
 export default interface Authority extends ToString
 {
-   readonly userInfo : UserInfo;
-   readonly port : Host;
-   readonly host : Number;
+   userInfo() : UserInfo;
+   port() : Host;
+   host() : Number;
 }

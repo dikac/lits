@@ -22,33 +22,21 @@ export default class Wrapper<G, S, I> implements Get<G>, Set<S>, Identifier<I>{
         return this.value;
     }
 
-    protected getGet() : G{
+    get() : G {
 
-        return this.value.get;
+        return this.value.get();
     }
 
-    protected setSet(set : S) {
+    set(set : S) {
 
-        return this.value.set = set;
+        return this.value.set(set);
     }
 
-    protected getIdentifier() : I {
+    identifier() : I {
 
-        return this.value.identifier;
+        return this.value.identifier();
     }
 
-    get identifier() : I {
 
-        return this.getIdentifier();
-    }
 
-    get get() : G {
-
-        return this.getGet();
-    }
-
-    set set(set : S) {
-
-        this.setSet(set);
-    }
 }

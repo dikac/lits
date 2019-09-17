@@ -1,5 +1,5 @@
 
 export default interface Clone <Type>  {
 
-   readonly clone : Clone<Type> & Type;
+   clone() : Clone<Type> & Type;
 }

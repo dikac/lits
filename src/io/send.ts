@@ -1,4 +1,4 @@
-export default interface Send<Response>  {
+export default interface Send<Argument, Response>  {
 
-    send() : Response;
+    send(argument : Argument) : Response;
 }

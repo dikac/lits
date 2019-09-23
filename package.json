@@ -4,6 +4,7 @@
   "description": "typescript generic library",
   "main": "dist",
   "dependencies": {
+    "escape-string-regexp": "^2.0.0",
     "typescript": "=3.5.3"
   },
   "devDependencies": {

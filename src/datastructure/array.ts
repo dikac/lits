@@ -11,6 +11,7 @@ import Extract from "./extract";
 import Get from "./get";
 import ExtractArray from "../array/any/extract";
 import Delete from "./delete";
+import Validatable from "../validatable/validatable";
 
 
 export default class
@@ -28,7 +29,8 @@ export default class
         Prepend<Data>,
         Extract<number, Data>,
         Length,
-        Iterable<Data>
+        Iterable<Data>,
+        Validatable
 {
     constructor(
         private array : Data[] = []
@@ -41,6 +43,11 @@ export default class
 
             yield value;
         }
+    }
+
+    valid(): boolean {
+
+        return this.array.length !== 0;
     }
 
     delete(identifier: number) {

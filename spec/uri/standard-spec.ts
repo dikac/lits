@@ -8,7 +8,7 @@ import Risky from "../../src/uri/value/risky";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough()});
 
-describe("path only", function() {
+describe("constructor", function() {
 
     let mutable = new Standard(
         new Risky('scheme'),
@@ -16,17 +16,18 @@ describe("path only", function() {
             new UserInfo(new Risky('user'), new Risky('password')),
             new Risky('host'), new Risky('port')
         ),
-        new FileRisky('/path/sub/file', '/'),
+        new FileRisky(['path','sub','file'], '/'),
         new Risky('query'),
         new Risky('fragment')
     );
 
-    it("scheme", () => expect('scheme').toBe(mutable.scheme().toString()));
-    it("user", () => expect('user').toBe(mutable.authority().userInfo().user().toString()));
-    it("password", () => expect('password').toBe(mutable.authority().userInfo().password().toString()));
-    it("host", () => expect('host').toBe(mutable.authority().host().toString()));
-    it("port", () => expect('port').toBe(mutable.authority().port().toString()));
-    it("query", () => expect('query').toBe(mutable.query().toString()));
-    it("fragment", () => expect('fragment').toBe(mutable.fragment().toString()));
+    it("scheme", () => expect(mutable.scheme().toString()).toBe('scheme'));
+    it("user", () => expect(mutable.authority().userInfo().user().toString()).toBe('user'));
+    it("password", () => expect(mutable.authority().userInfo().password().toString()).toBe('password'));
+    it("host", () => expect(mutable.authority().host().toString()).toBe('host'));
+    it("port", () => expect(mutable.authority().port().toString()).toBe('port'));
+    it("query", () => expect(mutable.query().toString()).toBe('query'));
+    it("fragment", () => expect(mutable.fragment().toString()).toBe('fragment'));
+    it("path", () => expect(mutable.path().toString()).toBe('path/sub/file'));
 
 });

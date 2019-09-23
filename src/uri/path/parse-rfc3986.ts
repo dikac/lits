@@ -1,21 +1,24 @@
 import ToString from "../../string/to-string";
 import Path from "./path";
-
-let regex = /[\/][^?#]*/;
+import * as escapeStringRegexp from "escape-string-regexp";
+import CaptureScheme from "../scheme/string/capture-rfc3986";
+import CaptureAuthority from "../authority/string/capture-rfc3986";
+import CaptureRfc3986 from "./string/capture-rfc3986";
 
 export default function<Return extends Path = Path>
 (
     uri : string,
-    path : (s : string) => Return
+    path : (s : string[]) => Return,
+    separators = ['/','\\',':']
 ) : Return {
 
-    let result = uri.match(regex);
+    let capture = new CaptureRfc3986(uri, separators);
 
-    if(result !== null) {
+    if(capture.valid()) {
 
-        let string = result[0].replace(/[\/]{2}[^\/]*/, '');
-        return  path(string);
+        let captured = capture.toString().replace(new RegExp(`^[${capture.splitter}]`), '');
+        return  path(captured.split(capture.splitter));
     }
 
-    return  path('');
+    return path([]);
 }

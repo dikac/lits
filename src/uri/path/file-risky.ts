@@ -6,18 +6,18 @@ import SafeCast from "../../string/safe-cast";
 
 export default class FileRisky extends DirectoryRisky implements File {
 
-    name () : undefined|string {
+    name () : null|string {
 
         if(this.length === 0) {
 
-            return undefined;
+            return null;
         }
 
         let last = this.ending();
 
         if(last === undefined) {
 
-            return undefined;
+            return null;
         }
 
         let parts = last.split('.');
@@ -31,18 +31,18 @@ export default class FileRisky extends DirectoryRisky implements File {
 
         if(name.length === 0) {
 
-            return undefined;
+            return null;
         }
 
         return name;
     }
 
-    setName (name : string|undefined) {
+    setName (name : string|null) {
 
         this.setFile(SafeCast(name) + DotExtension(this.extension()));
     }
 
-    setExtension(extension : undefined|string) {
+    setExtension(extension : null|string) {
 
         let file : string;
 
@@ -59,15 +59,15 @@ export default class FileRisky extends DirectoryRisky implements File {
         this.setFile(file);
     }
 
+    file() : string|null {
 
-    file() : string|undefined {
-
-        return this.ending();
+        let ending = this.ending();
+        return ending === undefined ? null : ending;
     }
 
-    setFile(file : undefined|string) {
+    setFile(file : null|string) {
 
-        if(file === undefined || file === '') {
+        if(file === null || file === '') {
 
             this.pop();
 
@@ -77,18 +77,18 @@ export default class FileRisky extends DirectoryRisky implements File {
         }
     }
 
-    extension() : string|undefined {
+    extension() : string|null {
 
         if(this.length === 0) {
 
-            return undefined;
+            return null;
         }
 
         let last = this.ending();
 
         if(last === undefined) {
 
-            return undefined;
+            return null;
         }
 
         let parts = last.split('.');
@@ -98,6 +98,6 @@ export default class FileRisky extends DirectoryRisky implements File {
             return <string> parts.pop();
         }
 
-        return undefined;
+        return null;
     }
 }

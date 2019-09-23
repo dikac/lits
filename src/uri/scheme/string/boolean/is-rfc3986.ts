@@ -1,6 +1,6 @@
-import pattern from "../pattern";
+import SubPattern from "../sub-pattern";
 
 export default function IsRfc3986(scheme : string) : boolean {
 
-    return scheme.match(new RegExp(`^${pattern}$`)) !== null;
+    return scheme.match(new RegExp(`^${SubPattern}$`)) !== null;
 }

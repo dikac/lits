@@ -1,21 +1,19 @@
 
 import ToString from "../../string/to-string";
-import pattern from "./string/pattern";
-import Ending from "../../datastructure/ending";
-import Validatable from "../../validatable/validatable";
+import SubPattern from "./string/sub-pattern";
 
-let regex = new RegExp(`^${pattern}:`);
+let regex = new RegExp(`^${SubPattern}:`);
 
-export default function ParseRfc3986 <Return extends ToString = ToString>
-(uri : string, scheme : (s : string) => Return
+export default function ParseRfc3986
+    <Return extends ToString = ToString>
+    (uri : string, scheme : (s : string) => Return
 ) : Return {
-
 
     let result = uri.match(regex);
 
     if(result !== null) {
 
-        let string = result[0].replace(':', '');
+        let string = result[0].substr(0, result[0].length - 1);
         return  scheme(string);
     }
 

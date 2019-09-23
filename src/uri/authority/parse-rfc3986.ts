@@ -1,12 +1,8 @@
-
 import ToString from "../../string/to-string";
-import Ending from "../../datastructure/ending";
-import Validatable from "../../validatable/validatable";
 import UserInfo from "../user-info/user-info";
 import Standard from "./standard";
 import Authority from "./authority";
-
-let regex = /[/]{2}[^?#/]*/;
+import CaptureRfc3986 from "./string/capture-rfc3986";
 
 export default function ParseRfc3986
 <
@@ -27,11 +23,11 @@ export default function ParseRfc3986
     let _host : string = '';
     let _port : string = '';
 
-    let result = uri.match(regex);
+    let result = CaptureRfc3986(uri);
 
-    if(result !== null) {
+    if(result.valid()) {
 
-        let authority = result[0].replace(':', '');
+        let authority = result.toString().substr(2);
 
         //check for user info
         if(authority.match(/@/)) {
@@ -40,7 +36,6 @@ export default function ParseRfc3986
             authority = parts[1];
 
             [_user, _password] = parts[0].split(':', 2);
-
         }
 
         let parts = authority.split(':', 2);
@@ -49,7 +44,7 @@ export default function ParseRfc3986
 
         if(parts[1] !== undefined) {
 
-            _port = parts[0];
+            _port = parts[1];
         }
 
     }

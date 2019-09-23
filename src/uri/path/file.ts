@@ -3,7 +3,7 @@ import Path from "./path";
 
 export default interface File extends Path {
 
-    extension() : string|undefined;
-    name() : string|undefined;
-    file() : string|undefined;
+    extension() : string|null;
+    name() : string|null;
+    file() : string|null;
 }

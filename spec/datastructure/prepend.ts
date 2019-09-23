@@ -1,12 +1,12 @@
 import PrependInterface from "../../src/datastructure/prepend";
 import Length from "../../src/length/length";
 import Get from "../../src/datastructure/get";
-import First from "../../src/datastructure/first";
-import Last from "../../src/datastructure/last";
+import Beginning from "../../src/datastructure/beginning";
+import Ending from "../../src/datastructure/ending";
 
 
 export default function Prepend<Data>(
-    target : PrependInterface<Data> & Iterable<Data> & Length & First<Data>,
+    target : PrependInterface<Data> & Iterable<Data> & Length & Beginning<Data>,
     current : Data[],
     prepend : Data[]
 ) {
@@ -21,7 +21,7 @@ export default function Prepend<Data>(
 
             it(`prepend ${value}`, () => target.prepend(value));
             it("length", () => expect(target.length).toBe(++length));
-            it("first",  () => expect(target.first()).toBe(value));
+            it("first",  () => expect(target.beginning()).toBe(value));
 
         }
 

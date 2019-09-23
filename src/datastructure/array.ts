@@ -1,8 +1,8 @@
 import Append from "./append";
 import Prepend from "./prepend";
 import Set from "./set";
-import Last from "./last";
-import First from "./first";
+import Ending from "./ending";
+import Beginning from "./beginning";
 import Has from "./has";
 import Length from "../length/length";
 import Pop from "./pop";
@@ -20,8 +20,8 @@ export default class
         Get<number, Data>,
         Append<Data>,
         Delete<number>,
-        Last<Data>,
-        First<Data>,
+        Ending<Data>,
+        Beginning<Data>,
         Pop<Data>,
         Shift<Data>,
         Has<number>,
@@ -63,12 +63,12 @@ export default class
         return  this.array.pop();
     }
 
-    last(): undefined | Data {
+    ending(): undefined | Data {
 
         return this.get(this.lastIndex);
     }
 
-    first(): Data | undefined {
+    beginning(): Data | undefined {
 
         return this.get(0);
     }

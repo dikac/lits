@@ -29,7 +29,7 @@ export default class Wrapper<G, S, I> implements Get<G>, Set<S>, Identifier<I>{
 
     set(set : S) {
 
-        return this.value.set(set);
+        this.value.set(set);
     }
 
     identifier() : I {

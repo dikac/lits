@@ -26,8 +26,8 @@ describe("construct & getter", function() {
     }
 
 
-    it("last", () => expect(mutable.last()).toBe('sub'));
-    it("first", () => expect(mutable.first()).toBe('root'));
+    it("last", () => expect(mutable.ending()).toBe('sub'));
+    it("first", () => expect(mutable.beginning()).toBe('root'));
 
 
     it("toString",

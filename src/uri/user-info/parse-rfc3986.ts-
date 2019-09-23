@@ -1,0 +1,40 @@
+
+import ToString from "../../string/to-string";
+import Ending from "../../datastructure/ending";
+import Validatable from "../../validatable/validatable";
+
+let regex = new RegExp(`^[^@]*@`);
+
+export default class ParseRfc3986 implements ToString, Ending<string> {
+
+    private result : string = '';
+    private _ending : string = '';
+
+    constructor (
+        authorithy : string,
+        user : (s : string) => ToString,
+        password : (s : string) => ToString
+    ) {
+
+        this._ending = authorithy;
+
+        let result = authorithy.match(regex);
+
+        if(result !== null) {
+
+            this.result = result[0].replace('@', '');
+
+            this._ending = this._ending.replace(regex, '');
+        }
+    }
+
+    // toString(): string {
+    //
+    //     return this.result;
+    // }
+
+    ending() : string {
+
+        return this._ending;
+    }
+}

@@ -1,15 +1,20 @@
 import ToString from "../string/to-string";
 import Path from "./path/path";
-import Scheme from "./scheme/scheme";
-import Query from "./query/query";
 import Authority from "./authority/authority";
-import Fragment from "./fragment/fragment";
 
-export default interface Uri extends ToString
+export default
+    interface Uri<
+        S extends ToString  = ToString,
+        A extends Authority = Authority,
+        P extends Path      = Path,
+        Q extends ToString  = ToString,
+        F extends ToString  = ToString,
+    >
+/*    extends ToString*/
 {
-    scheme() : Scheme;
-    query() : Query;
-    fragment() : Fragment;
-    authority() : Authority;
-    path() : Path;
+    scheme() : S;
+    query() : Q;
+    fragment() : F;
+    authority() : A;
+    path() : P;
 }

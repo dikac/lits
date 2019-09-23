@@ -13,7 +13,7 @@ export default class FileRisky extends DirectoryRisky implements File {
             return undefined;
         }
 
-        let last = this.last();
+        let last = this.ending();
 
         if(last === undefined) {
 
@@ -48,11 +48,11 @@ export default class FileRisky extends DirectoryRisky implements File {
 
         if(extension === undefined) {
 
-            file = SafeCast(this.name);
+            file = SafeCast(this.name());
 
         } else {
 
-            file = SafeCast(this.name) + DotExtension(extension);
+            file = SafeCast(this.name()) + DotExtension(extension);
 
         }
 
@@ -62,7 +62,7 @@ export default class FileRisky extends DirectoryRisky implements File {
 
     file() : string|undefined {
 
-        return this.last();
+        return this.ending();
     }
 
     setFile(file : undefined|string) {
@@ -84,7 +84,7 @@ export default class FileRisky extends DirectoryRisky implements File {
             return undefined;
         }
 
-        let last = this.last();
+        let last = this.ending();
 
         if(last === undefined) {
 

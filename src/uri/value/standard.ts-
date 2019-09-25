@@ -1,0 +1,19 @@
+import ToString from "../../string/to-string";
+import Variable from "../../value/variable";
+
+export default class Standard<Value extends ToString = ToString> extends Variable<Value> implements ToString {
+
+    constructor(
+        value : Value,
+        readonly filter : (value : string) => string
+    ) {
+
+        super(value);
+    }
+
+    toString(): string {
+
+        return this.filter(this.get().toString());
+    }
+
+}

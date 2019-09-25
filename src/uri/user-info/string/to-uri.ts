@@ -1,9 +1,8 @@
-import ToString from "../../../string/to-string";
 import UserInfo from "../user-info";
-import JoinComponent from "./join-component";
+import ToUriComponent from "./to-uri-component";
 
-export default function ToUri(userInfo : UserInfo) : string {
+export default function Join(userInfo : UserInfo) : string {
 
-    return JoinComponent(userInfo.user(), userInfo.password());
+    return ToUriComponent(userInfo.user(), userInfo.password());
 
 }

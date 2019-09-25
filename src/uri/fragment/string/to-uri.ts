@@ -1,14 +1,7 @@
 import ToString from "../../../string/to-string";
+import Prefixing from "../../string/prefixing";
 
 export default function ToUri(fragment : ToString) : string {
 
-    let string = fragment.toString();
-
-    if(string.length > 0) {
-
-        return '#' + string;
-    }
-
-    return '';
-
+    return Prefixing(fragment, '#');
 }

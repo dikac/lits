@@ -1,5 +1,4 @@
 import UserInfo from "./user-info";
-import JoinComponent from "./string/to-uri";
 import ToString from "../../string/to-string";
 
 export default class Standard<
@@ -24,7 +23,6 @@ export default class Standard<
     setUser(value : U)  {
 
         this._user = value;
-
     }
 
     password(): P {
@@ -36,9 +34,4 @@ export default class Standard<
 
         return this._user
     }
-
-    // toString(): string {
-    //
-    //     return ToUri(this.user(), this.password())
-    // }
 }

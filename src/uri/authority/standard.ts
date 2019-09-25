@@ -52,9 +52,4 @@ export default
         return this._host;
     }
 
-/*
-    toString(): string {
-
-        return  Join(this.userInfo(), this.host(), this.port());
-    }*/
 }

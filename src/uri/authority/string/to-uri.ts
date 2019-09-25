@@ -1,23 +1,12 @@
-import Authority from "../authority";
-import JoinComponent from "./join-component";
 import UserInfo from "../../user-info/user-info";
+import UserInfoJoin from "../../user-info/string/to-uri";
+import Authority from "../authority";
+import ToUriComponent from "./to-uri-component";
 
 export default function ToUri(
     authority : Authority,
-    userInfoToString : (userInfo : UserInfo) => string
+    userInfoToUri : (userInfo : UserInfo) => string = UserInfoJoin
 ) : string {
 
-    let string = JoinComponent(
-        authority.userInfo(),
-        authority.host(),
-        authority.port(),
-        userInfoToString
-    );
-
-    if(string.length > 0) {
-
-        return '//' + string;
-    }
-
-    return '';
+    return ToUriComponent(authority.userInfo(), authority.host(), authority.port(), userInfoToUri);
 }

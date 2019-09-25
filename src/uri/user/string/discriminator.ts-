@@ -1,0 +1,2 @@
+const Discriminator = 'discriminator:lits/uri/user';
+export default Discriminator;

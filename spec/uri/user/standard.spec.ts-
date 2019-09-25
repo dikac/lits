@@ -1,0 +1,21 @@
+import Standard from "../../../src/uri/user/standard";
+
+
+
+it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+
+
+describe("not encoded", function() {
+
+    describe("lower alpha", function() {
+
+        let lower = 'abcdefghijklmnopqrstuvwxyz';
+        let user = new Standard(lower);
+
+        console.log(user);
+        it(`get is equal`, () => expect(user.get()).toBe(lower));
+        it(`toString is equal`, () => expect(user.toString()).toBe(lower));
+
+    });
+
+});

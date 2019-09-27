@@ -10,9 +10,9 @@ export default class Parse implements ToString, Validatable {
     private fragment : string = '';
     private _valid : boolean = false;
 
-    constructor(uri : string) {
+    constructor(uri : string, pattern : RegExp = Pattern) {
 
-        let match = Match(uri);
+        let match = Match(uri, pattern);
 
         if(match.valid()) {
 

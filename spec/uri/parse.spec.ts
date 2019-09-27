@@ -12,7 +12,6 @@ import ParseQuery from "../../src/uri/query/parse";
 
 
 
-
 it("force console log", () => { spyOn(console, 'log').and.callThrough()});
 
 for(let [full, uri] of TestDatum) {

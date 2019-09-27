@@ -1,9 +1,9 @@
-import SubPattern from "../string/sub-pattern";
 import Component from "../../validatable/component";
+import SubPatternRfc from "../string/sub-pattern-rfc";
 
-export default function IsScheme(scheme : string) : Component<string> {
+export default function IsRfc(scheme : string) : Component<string> {
 
-    let match =  scheme.match(new RegExp(`^${SubPattern}$`));
+    let match =  scheme.match(new RegExp(`^${SubPatternRfc}$`));
 
     if(match !== null) {
 

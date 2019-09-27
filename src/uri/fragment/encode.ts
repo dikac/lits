@@ -1,4 +1,5 @@
-import SubDelimiter from "../string/sub-delimiter";
+import SubDelimiter from "../regex/sub-delimiter";
+import Trim from "./string/trim";
 
 let allowed : Map<string, string> = new Map<string, string>();
 
@@ -14,7 +15,7 @@ allowed.set('%3A', ':');
 allowed.set('%25', '%');
 
 // sub delimiter
-for (let char of SubDelimiter) {
+for (let char of Trim(SubDelimiter.source)) {
 
     allowed.set(encodeURIComponent(char), char);
 }

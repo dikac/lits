@@ -1,5 +1,6 @@
 import Encode from "../../../src/uri/fragment/encode";
-import SubDelimiter from "../../../src/uri/string/sub-delimiter";
+import SubDelimiter from "../../../src/uri/regex/sub-delimiter";
+import Trim from "../../../src/string/trim";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -31,8 +32,8 @@ describe("not encoded", function() {
 
     describe("sub delimiter", function() {
 
-        let encoded = Encode(SubDelimiter);
+        let encoded = Encode(Trim(SubDelimiter.source, '[]'));
 
-        it(`is equal`, () => expect(encoded).toBe(SubDelimiter));
+        it(`is equal`, () => expect(encoded).toBe(Trim(SubDelimiter.source, '[]')));
     });
 });

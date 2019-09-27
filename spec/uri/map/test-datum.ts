@@ -1,8 +1,14 @@
-import Uri from "../../../src/uri/uri";
 import StdUri from "../../../src/uri/standard";
 import StdAuthority from "../../../src/uri/authority/standard";
 import StdUserInfo from "../../../src/uri/user-info/standard";
 import StdPath from "../../../src/uri/path/standard";
+import AuthorityAggregate from "../../../src/uri/authority/aggregate/authority";
+import SchemeAggregate from "../../../src/uri/scheme/aggregate/scheme";
+import PathAggregate from "../../../src/uri/path/aggregate/path";
+import QueryAggregate from "../../../src/uri/query/aggregate/query";
+import FragmentAggregate from "../../../src/uri/fragment/aggregate/fragment";
+
+type Uri = AuthorityAggregate & SchemeAggregate & PathAggregate & QueryAggregate & FragmentAggregate;
 
 const TestDatum : Map<string, Uri>= new Map<string, Uri>();
 export default TestDatum;
@@ -23,6 +29,24 @@ TestDatum.set('scheme://user:password@host:port/path/sub/file?query#fragment',
         'fragment'
     )
 );
+
+TestDatum.set('/root/dir/sub',
+    new StdUri(
+        '',
+        new StdAuthority(
+            new StdUserInfo(
+                '',
+                ''
+            ),
+            '',
+            ''
+        ),
+        new StdPath('/root/dir/sub', '/'),
+        '',
+        ''
+    )
+);
+
 
 TestDatum.set('C:\\Program Files\\Microsoft Office',
     new StdUri(

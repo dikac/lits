@@ -8,8 +8,7 @@ export default function Match(
     uri : string,
 ) : StringMatch {
 
-    uri = RemoveScheme(uri);
-    uri = RemoveAuthority(uri);
+     uri = new RemoveAuthority(new RemoveScheme(uri).toString()).toString();
 
     let regex = new RegExp(`^[^?#]*`);
 

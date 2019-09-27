@@ -1,7 +1,11 @@
 import Path from "./path/path";
 import Authority from "./authority/authority";
-import Uri from "./uri";
 import ToString from "../string/to-string";
+import AuthorityAggregate from "./authority/aggregate/authority";
+import SchemeAggregate from "./scheme/aggregate/scheme";
+import PathAggregate from "./path/aggregate/path";
+import QueryAggregate from "./query/aggregate/query";
+import FragmentAggregate from "./fragment/aggregate/fragment";
 
 export default
     class Standard<
@@ -11,7 +15,12 @@ export default
         Q extends ToString  = ToString,
         F extends ToString  = ToString,
     >
-    implements Uri
+    implements
+        AuthorityAggregate<A>,
+        SchemeAggregate<S>,
+        PathAggregate<P>,
+        QueryAggregate<Q>,
+        FragmentAggregate<F>
 {
 
     private _scheme    !: S;

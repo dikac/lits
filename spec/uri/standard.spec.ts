@@ -3,8 +3,6 @@ import Authority from "../../src/uri/authority/standard";
 import UserInfo from "../../src/uri/user-info/standard";
 import StdFile from "../../src/uri/path/standard";
 
-
-
 it("force console log", () => { spyOn(console, 'log').and.callThrough()});
 
 describe("constructor", function() {

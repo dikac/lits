@@ -11,7 +11,7 @@ for(let [full, uri] of TestDatum) {
 
     describe(full, function() {
 
-        let capture = Match(full);
+        let capture = new Match(full);
 
         let joined = ToUri(uri.authority());
 

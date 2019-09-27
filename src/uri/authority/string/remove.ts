@@ -2,21 +2,60 @@ import ToString from "../../../string/to-string";
 import * as Escape from "escape-string-regexp";
 import Validatable from "../../../validatable/validatable";
 import Match from "../validatable/match";
+import AuthorityAggregate from "../aggregate/authority";
+import Authority from "../authority";
+import Standard from "../standard";
+import StdUserInfo from "../../user-info/standard";
+import Split from "../split";
 
-export default function Remove(
-    uri : string,
-    matcher : (uri : string) => Validatable & ToString = Match
-) : string {
+export default class Remove implements ToString, AuthorityAggregate<Standard<StdUserInfo<string, string>, string, string>> {
 
-    let match = matcher(uri);
+    private _uri : string;
+    private match : Validatable & ToString;
 
-    if(match.valid()) {
+    constructor(
+        uri : string,
+        matcher : (uri : string) => Validatable & ToString = uri => new Match(uri)
+    ) {
 
-        return  uri.split(match.toString(), 2).join('');
+        this.match = matcher(uri);
 
-    } else {
+        if(this.match.valid()) {
 
-        return uri;
+            this._uri = uri.split(this.match.toString(), 2).join('');
+
+        } else {
+
+            this._uri = uri;
+        }
+
     }
 
+    authority(): Standard<StdUserInfo<string, string>, string, string> {
+
+        return Split(this.match.toString());
+    }
+
+    toString(): string {
+
+        return this._uri;
+    }
 }
+//
+// export default function Remove(
+//     uri : string,
+//     matcher : (uri : string) => Validatable & ToString = Match
+// ) : string {
+//
+//     let match = matcher(uri);
+//
+//     if(match.valid()) {
+//
+//         return  uri.split(match.toString(), 2).join('');
+//
+//     } else {
+//
+//         return uri;
+//     }
+//
+// }

@@ -1,5 +1,5 @@
 
-export default class <T, Container extends Set<T> = Set<T>> implements Set<T> {
+export default class Wrapper <T, Container extends Set<T> = Set<T>> implements Set<T> {
 
     private $set !: Container;
 

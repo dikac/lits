@@ -1,0 +1,17 @@
+import Stringable from "../../string/value/stringable";
+import User from "./user";
+import Discriminator from "./string/discriminator";
+
+
+export default class Standard extends Stringable<string> implements User {
+
+    toString(): string {
+
+        let value = super.toString();
+        value = encodeURIComponent(value);
+        return value;
+    }
+
+}
+
+

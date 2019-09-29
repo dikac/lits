@@ -1,16 +1,15 @@
 import AppendInterface from "../../src/datastructure/append";
 import Length from "../../src/length/length";
 import Get from "../../src/datastructure/get";
-import First from "../../src/datastructure/first";
-import Last from "../../src/datastructure/last";
+import Beginning from "../../src/datastructure/beginning";
+import Ending from "../../src/datastructure/ending";
 
 
 export default function Append<Data>(
-    target : AppendInterface<Data> & Iterable<Data> & Length & Last<Data>,
+    target : AppendInterface<Data> & Iterable<Data> & Length & Ending<Data>,
     current : Data[],
     append : Data[]
 ) {
-
     describe(`append`, function() {
 
         it('value before', ()=>expect([...target]).toEqual(current));
@@ -21,7 +20,7 @@ export default function Append<Data>(
 
             it(`append ${value}`, () => target.append(value));
             it("length", () => expect(target.length).toBe(++length));
-            it("first",  () => expect(target.last()).toBe(value));
+            it("first",  () => expect(target.ending()).toBe(value));
 
         }
 

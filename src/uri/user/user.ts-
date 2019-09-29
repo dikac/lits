@@ -1,0 +1,9 @@
+import Get from "../../value/get";
+import ToString from "../../string/to-string";
+import Discriminator from "./string/discriminator";
+
+export default interface User<F extends ToString = ToString> extends ToString, Get<F> {
+
+    [Discriminator] : null;
+
+}

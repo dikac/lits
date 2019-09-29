@@ -1,10 +1,15 @@
 import ToString from "../../string/to-string";
-import UserInfo from "./user-info/user-info";
-import Host from "./host/host";
+import UserInfo from "../user-info/user-info";
 
-export default interface Authority extends ToString
+export default
+   interface Authority<
+       Ui extends UserInfo = UserInfo,
+       H extends ToString = ToString,
+       P extends ToString = ToString,
+    >
+/*   extends ToString*/
 {
-   userInfo() : UserInfo;
-   port() : Host;
-   host() : Number;
+   userInfo() : Ui;
+   port() : P;
+   host() : H;
 }

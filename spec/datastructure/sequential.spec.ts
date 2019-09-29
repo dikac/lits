@@ -2,9 +2,9 @@ import Sequential from "../../src/datastructure/sequential";
 import ConstructAccessNumber from "./construct-access-number";
 import Append from "./append";
 import Prepend from "./prepend";
-import Array from "../../src/datastructure/array";
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+
+it("force console log", () => { spyOn(console, 'log').and.callThrough()});
 
 // force create copy, no reference
 let raw = () => ['1','2','3'];

@@ -1,8 +1,8 @@
 import Append from "./append";
 import Prepend from "./prepend";
 import Set from "./set";
-import Last from "./last";
-import First from "./first";
+import Ending from "./ending";
+import Beginning from "./beginning";
 import Has from "./has";
 import Length from "../length/length";
 import Pop from "./pop";
@@ -11,6 +11,7 @@ import Extract from "./extract";
 import Get from "./get";
 import ExtractArray from "../array/any/extract";
 import Delete from "./delete";
+import Validatable from "../validatable/validatable";
 
 
 export default class
@@ -20,15 +21,16 @@ export default class
         Get<number, Data>,
         Append<Data>,
         Delete<number>,
-        Last<Data>,
-        First<Data>,
+        Ending<Data>,
+        Beginning<Data>,
         Pop<Data>,
         Shift<Data>,
         Has<number>,
         Prepend<Data>,
         Extract<number, Data>,
         Length,
-        Iterable<Data>
+        Iterable<Data>,
+        Validatable
 {
     constructor(
         private array : Data[] = []
@@ -41,6 +43,11 @@ export default class
 
             yield value;
         }
+    }
+
+    valid(): boolean {
+
+        return this.array.length !== 0;
     }
 
     delete(identifier: number) {
@@ -63,12 +70,12 @@ export default class
         return  this.array.pop();
     }
 
-    last(): undefined | Data {
+    ending(): undefined | Data {
 
         return this.get(this.lastIndex);
     }
 
-    first(): Data | undefined {
+    beginning(): Data | undefined {
 
         return this.get(0);
     }

@@ -1,11 +1,11 @@
 import Has from "../../src/datastructure/has";
 import Get from "../../src/datastructure/get";
 import Length from "../../src/length/length";
-import Last from "../../src/datastructure/last";
-import First from "../../src/datastructure/first";
+import Ending from "../../src/datastructure/ending";
+import Beginning from "../../src/datastructure/beginning";
 
 export default function ConstructAccessNumber<Data>(
-    mutable : Get<number, Data> & Length & Has<number> & Last<Data> & First<Data>,
+    mutable : Get<number, Data> & Length & Has<number> & Ending<Data> & Beginning<Data>,
     expectation : Data[]
 ) {
 
@@ -29,7 +29,7 @@ export default function ConstructAccessNumber<Data>(
         }
 
 
-        it("last", () => expect(mutable.last()).toBe(expectation.slice(0).pop()));
-        it("first", () => expect(mutable.first()).toBe(expectation.slice(0).shift()));
+        it("last", () => expect(mutable.ending()).toBe(expectation.slice(0).pop()));
+        it("first", () => expect(mutable.beginning()).toBe(expectation.slice(0).shift()));
     });
 }

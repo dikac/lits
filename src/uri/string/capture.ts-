@@ -1,0 +1,18 @@
+import Edge from "../datastructure/edge";
+
+export default function Capture(source: string, pattern : RegExp) : Edge {
+
+    let match = source.match(pattern);
+
+    if(match !== null) {
+
+        let scheme = match[0];
+
+        if(scheme.length !== 0) {
+
+            return new Edge(source, scheme.substr(0, scheme.length - 1), match[0], true);
+        }
+    }
+
+    return new Edge(source);
+}

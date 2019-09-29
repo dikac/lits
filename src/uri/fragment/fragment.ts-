@@ -1,0 +1,7 @@
+import Get from "../../value/get";
+import ToString from "../../string/to-string";
+
+export default interface Fragment<F extends ToString = ToString> extends ToString, Get<F> {
+
+
+}

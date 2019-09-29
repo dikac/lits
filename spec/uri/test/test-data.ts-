@@ -1,0 +1,12 @@
+export default interface TestData {
+
+    uri : string;
+    scheme : string;
+    user : string;
+    password : string;
+    host : string;
+    port : string;
+    path : string;
+    query : string;
+    fragment : string;
+}

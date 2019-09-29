@@ -1,87 +1,77 @@
 
 export default class Wrapper <T, Container extends Set<T> = Set<T>> implements Set<T> {
 
-    private $set !: Container;
+    private _set !: Container;
 
     constructor(set: Container)
     {
-        this.container = set;
-    }
-
-    protected set container(container : Container) {
-
-        this.setSet(container);
-    }
-
-    protected get container() : Container {
-
-        return this.getSet();
+        this.setSet(set);
     }
 
     protected setSet (set : Container) {
 
-        this.$set = set;
+        this._set = set;
     }
 
     protected getSet () : Container {
 
-        return this.$set;
+        return this._set;
     }
 
     [Symbol.iterator](): IterableIterator<T>
     {
-        return this.container[Symbol.iterator]();
+        return this._set[Symbol.iterator]();
     }
 
     entries(): IterableIterator<[T, T]>
     {
-        return this.container.entries();
+        return this._set.entries();
     }
 
     keys(): IterableIterator<T>
     {
-        return this.container.keys();
+        return this._set.keys();
     }
 
     forEach(callbackfn: (value: T, value2: T, set: Set<T>) => void, thisArg?: any): void
     {
-        this.container.forEach(callbackfn, thisArg);
+        this._set.forEach(callbackfn, thisArg);
     }
 
     values(): IterableIterator<T>
     {
-        return this.container.values();
+        return this._set.values();
     }
 
     add(value: T) : this
     {
-        this.container.add(value);
+        this._set.add(value);
         return this;
     }
 
     clear(): void
     {
-        this.container.clear();
+        this._set.clear();
     }
 
     delete(value: T): boolean
     {
-        return this.container.delete(value);
+        return this._set.delete(value);
     }
 
     get [Symbol.toStringTag](): string
     {
-        return this.container[Symbol.toStringTag];
+        return this._set[Symbol.toStringTag];
     }
 
     get size(): number
     {
-        return this.container.size;
+        return this._set.size;
     }
 
     has(value: T): boolean
     {
-        return this.container.has(value);
+        return this._set.has(value);
     }
 }
 

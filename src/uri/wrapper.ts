@@ -8,7 +8,7 @@ import QueryAggregate from "./query/aggregate/query";
 import FragmentAggregate from "./fragment/aggregate/fragment";
 
 export default
-    class Standard<
+    class Wrapper<
         S extends ToString  = ToString,
         A extends Authority = Authority,
         P extends Path      = Path,
@@ -23,74 +23,62 @@ export default
         FragmentAggregate<F>
 {
 
-    private _scheme    !: S;
-    private _query     !: Q;
-    private _fragment  !: F;
-    private _authority !: A;
-    private _path      !: P;
+    private uri !:
+        AuthorityAggregate<A> &
+        SchemeAggregate<S>&
+        PathAggregate<P>&
+        QueryAggregate<Q>&
+        FragmentAggregate<F>;
+
 
     constructor(
-        scheme : S,
-        authority : A,
-        path : P,
-        query : Q,
-        fragment : F,
+        uri :
+            AuthorityAggregate<A> &
+            SchemeAggregate<S>&
+            PathAggregate<P>&
+            QueryAggregate<Q>&
+            FragmentAggregate<F>
     ) {
-        this.setScheme(scheme);
-        this.setQuery(query);
-        this.setFragment(fragment);
-        this.setAuthority(authority);
-        this.setPath(path);
+        this.setUri(uri);
     }
 
-    setScheme(value : S) {
+    protected setUri(
+        uri : AuthorityAggregate<A> & SchemeAggregate<S> & PathAggregate<P> & QueryAggregate<Q> & FragmentAggregate<F>
+    ) {
 
-        this._scheme = value;
+        this.uri = uri;
     }
 
-    setQuery(value : Q) {
+    protected getUri()
+        : AuthorityAggregate<A> & SchemeAggregate<S> & PathAggregate<P> & QueryAggregate<Q> & FragmentAggregate<F>
+    {
 
-        this._query = value;
-    }
-
-    setFragment(value : F) {
-
-        this._fragment = value;
-    }
-
-    setAuthority(value : A) {
-
-        this._authority = value;
-    }
-
-    setPath(value : P) {
-
-        this._path = value;
+        return this.uri;
     }
 
     scheme() : S {
 
-        return this._scheme;
+        return this.uri.scheme();
     }
 
     query() : Q {
 
-        return this._query;
+        return this.uri.query();
     }
 
     fragment() : F {
 
-        return this._fragment;
+        return this.uri.fragment();
     }
 
     authority() : A {
 
-        return this._authority;
+        return this.uri.authority();
     }
 
     path() : P {
 
-        return this._path;
+        return this.uri.path();
     }
-
+ 
 }

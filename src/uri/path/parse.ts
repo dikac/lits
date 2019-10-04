@@ -1,11 +1,6 @@
-import ToString from "../../string/to-string";
 import Path from "./path";
 import * as escapeStringRegexp from "escape-string-regexp";
-
 import Validatable from "../../validatable/validatable";
-import RemoveScheme from "../scheme/string/remove";
-import RemoveAuthority from "../authority/string/remove";
-import MatchScheme from "../scheme/validatable/match";
 import Match from "./validatable/match";
 
 

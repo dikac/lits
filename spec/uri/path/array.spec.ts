@@ -2,7 +2,6 @@ import DirectoryManual from "../../../src/uri/path/standard-array";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
-
 describe("construct & getter", function() {
 
     let raw = ['root','path','sub'];

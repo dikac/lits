@@ -1,6 +1,5 @@
 import Match from "../../../../src/uri/path/validatable/match";
 import TestDatum from "../../map/test-datum";
-import TrimPath from "../../../../src/uri/path/string/trim-path";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough()});
 

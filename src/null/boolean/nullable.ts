@@ -1,4 +1,4 @@
-export default function IsNullable<Type>(value : any, is : Callback<Type>) : value is Type|null {
+export default function Nullable<Type>(value : any, is : Callback<Type>) : value is Type|null {
     
     return value === null || is(value);
 }

@@ -2,7 +2,7 @@ import HasMethods from "../../object/boolean/has-methods";
 import HasSymbolIterator from "../../object/boolean/has-symbol-iterator";
 import HasSymbolToString from "../../object/boolean/has-symbol-to-string";
 
-export default function<Key, Value> (value : any) : value is Map<Key, Value> {
+export default function Is <Key, Value> (value : any) : value is Map<Key, Value> {
 
     if(typeof value !== 'object' || value === null) {
 

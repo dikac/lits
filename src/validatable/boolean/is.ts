@@ -1,8 +1,9 @@
 import Validatable from "../validatable";
+import NotNull from "../../object/boolean/not-null";
 
-export default function IsValidatable (value : any) : value is Validatable  {
+export default function Is (value : any) : value is Validatable  {
 
-    if(typeof value !== 'object' || value === null) {
+    if(!NotNull<Validatable>(value)) {
 
         return false;
     }

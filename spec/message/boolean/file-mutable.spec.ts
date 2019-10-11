@@ -1,5 +1,5 @@
 import Invalid from "../../../src/validatable/invalid";
-import IsValidatable from "../../../src/message/boolean/is-message";
+import IsValidatable from "../../../src/message/boolean/is";
 import Error from "../../../src/message/validatable/error";
 
 

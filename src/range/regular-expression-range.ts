@@ -34,21 +34,21 @@ export default class implements Range {
         this._maximum = number;
     }
 
-    minimum () : number {
+    get minimum () : number {
 
         return this._minimum;
     }
 
-    maximum () : number {
+    get maximum () : number {
 
         return this._maximum;
     }
 
     toString() {
 
-        let minimum = this.minimum() === 0 ? '' : this.minimum();
+        let minimum = this.minimum === 0 ? '' : this.minimum;
 
-        let maximum = this.maximum() === Infinity ? '' : this.maximum();
+        let maximum = this.maximum === Infinity ? '' : this.maximum;
 
         let range = `{${minimum},${maximum}}`;
 

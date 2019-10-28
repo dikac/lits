@@ -9,26 +9,39 @@ export default class Standard implements Range {
         minimum : number,
         maximum : number
     ) {
-        this.setMaximum(maximum);
-        this.setMinimum(minimum);
+        this._minimum = minimum;
+        this._maximum = maximum;
+
+        this.maximum = maximum;
+        this.minimum = minimum;
     }
 
-    setMinimum(minimum: number) {
+    set minimum(minimum: number) {
+
+        if(minimum > this.maximum) {
+
+            throw new Error('minimum is higher than current maximum')
+        }
 
         this._minimum = minimum;
     }
 
-    setMaximum(maximum: number) {
+    set maximum(maximum: number) {
+
+        if(maximum < this.minimum) {
+
+            throw new Error('maximum is lower than current maximum')
+        }
 
         this._maximum = maximum;
     }
 
-    minimum() : number {
+    get minimum() : number {
 
         return this._minimum;
     }
 
-    maximum() : number {
+    get maximum() : number {
 
         return this._maximum;
     }

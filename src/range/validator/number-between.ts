@@ -6,10 +6,9 @@ import Standard from "../standard";
 
 export default class NumberBetween extends Standard implements Validator<number> {
 
-
     validate(number : number): Validatable {
 
-        return new Primitive(number >= this.minimum() && number <= this.maximum());
+        return new Primitive(number >= this.minimum && number <= this.maximum);
 
     }
 

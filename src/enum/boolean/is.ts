@@ -1,10 +1,13 @@
 export default function Is<Type>(value : any, type : Type) : value is Type {
 
-    if(!(value in type)) {
+    for(let data in type) {
 
-        return false;
+        if(value === type[data]) {
+
+            return true;
+        }
     }
 
-    return true;
+    return false;
 
 }
